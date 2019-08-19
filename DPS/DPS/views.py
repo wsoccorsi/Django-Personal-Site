@@ -1,4 +1,4 @@
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse('testing host again')
+    return HttpResponse('testing host again once more')
