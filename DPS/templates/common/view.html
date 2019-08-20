@@ -5,20 +5,47 @@
     <meta charset="utf-8">
     <title>Will Soccorsi</title>
   </head>
+
+  <!-- CDN's and Font -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="{% static '/css/custom.css' %}" rel="stylesheet" type="text/css">
+
 
   <div class="jumbotron">
-  <h1 class="display-4 text-center">Will Soccorsi</h1>
-  <p class="lead">  Bio </p>
-  <hr class="my-4">
+  <h1 class="display-4 text-center">Demo</h1>
+  <p class="lead text-center"> welcome  </p>
+  <hr class="my-1">
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Github</a>
+    <h4 class="fancy text-center">Description</h4>
   </p>
 </div>
   <body>
-    <img src="{% static "images/aws-flex.gif" %}" alt="can't flex">
-    <img src="{% static "images/django-python.png" %}" alt="can't flex">
+    <h1 class="fancy text-center"> Site Built With </h1>
 
+
+
+  <div class="container" style="width: 70%">
+    <div class="row" align="center">
+
+        <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+            <a class="thumbnail" href="#">
+              <img style="border-radius: 50%;" src="{% static "images/aws.jpg" %}" alt="can't flex">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+            <a class="thumbnail" href="#">
+                <img  src="{% static "images/django.png" %}" alt="can't flex">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+            <a class="thumbnail" href="#">
+                <img  src="{% static "images/postgres.jpg" %}" alt="can't flex">
+            </a>
+        </div>
+      </div>
+  </div>
   </body>
+
 
 </html>
