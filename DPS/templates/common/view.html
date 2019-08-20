@@ -45,6 +45,28 @@
         </div>
       </div>
   </div>
+
+  <br>
+  <br>
+  <h4 class="fancy text-center">PostrgreSQL Query</h4>
+
+  <table class = "table table-dark">
+    <thead class="text-center">
+      <tr>
+        <th>Name</th>
+        <th>Profecieny</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      {% for tech in tech_stack %}
+        <tr>
+          <td>{{tech.name}}</td>
+          <td> {{tech.profecieny}}/10 </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
   </body>
 
 
