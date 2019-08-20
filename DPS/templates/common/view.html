@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -8,16 +9,16 @@
 
   <div class="jumbotron">
   <h1 class="display-4 text-center">Will Soccorsi</h1>
-  <p class="lead">  Check out my github https://github.com/wsoccorsi</p>
+  <p class="lead">  Bio </p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Github</a>
   </p>
 </div>
   <body>
+    <img src="{% static "images/aws-flex.gif" %}" alt="can't flex">
+    <img src="{% static "images/django-python.png" %}" alt="can't flex">
 
-    Check out my github https://github.com/wsoccorsi
   </body>
 
 </html>
