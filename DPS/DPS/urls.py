@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from DPS.views import home
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/postings/', include('common.api.urls', 'api'), namespace='api-postings'),
-    path('', home),
+    path('', include('api.urls')),
+    # path('', home),
 
 ]
