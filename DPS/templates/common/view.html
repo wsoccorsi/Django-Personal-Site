@@ -4,22 +4,48 @@
   <head>
     <meta charset="utf-8">
     <title>Will Soccorsi</title>
+
+    <!-- CDN's and Font -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/2555c1188f.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="{% static '/css/custom.css' %}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{% static "images/favicon.png" %}">
   </head>
-  <!-- CDN's and Font -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-  <link href="{% static '/css/custom.css' %}" rel="stylesheet" type="text/css">
-  <link rel="icon" href="{% static "images/favicon.png" %}">
 
 
-  <div class="jumbotron">
-  <h1 class="fancy display-4 text-center">Will Soccorsi</h1>
-  <p class="lead text-center"> Full Stack & Software Engineering Interest  </p>
+
+  <div class="jumbotron" style="background-color:#53B1E1; padding-bottom: 2px;">
+
+<h1 class="fancy display-4 text-center">
+  <img  style="width:7%; border-radius:50%" src="{% static "images/gitphoto.jpeg" %}" alt="can't flex">
+  Will Soccorsi
+    <a href="https://www.linkedin.com/in/william-soccorsi-358953172/"><i  style="color:#0000FF;" class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/wsoccorsi?tab=overview&from=2019-08-01&to=2019-08-24"><i style="color:black;" class="fab fa-github"></i></a>
+</h1>
+  <p class="lead text-center"> Full Stack & Software Engineering Interest </p>
   <hr class="my-1">
-  <p class="lead">
-    <h4 class="lead text-center">Currently a student at the University of Vermont, with a passion for full stack development</h4>
+  <p class="lead" >
+  <h4 class="lead text-center"> About Me
+    <a id="about_me_down"><i class="fas fa-caret-down"></i></a>
+  </h4>
+
+    <h4 class="lead text-center" id="about_me_txt" style="display:none;">
+    Currently a student at the University of Vermont pursuing a Bachelors of Science in Computer Science.<br>
+    I have a passion for Full Stack Development and Software Engineering.<br>
+    I will be graduating in December 2019 and exicted to use my skills in the professional field.<br>
+    Currently looking for full time opportunties, all contact information is located in resume.
+
+  </h4>
   </p>
+
+
 </div>
+
   <body>
     <h1 class="fancy text-center"> Site Built With </h1>
 
@@ -30,45 +56,82 @@
 
         <div class="col-lg-4 col-md-4 col-xs-4 thumb">
             <a class="thumbnail" href="#">
-              <img style="border-radius: 50%;" src="{% static "images/aws.jpg" %}" alt="can't flex">
+              <img style="border-radius: 50%; width:35%;" src="{% static "images/aws.jpg" %}" alt="can't flex">
             </a>
         </div>
         <div class="col-lg-4 col-md-4 col-xs-4 thumb">
             <a class="thumbnail" href="#">
-                <img  src="{% static "images/django.png" %}" alt="can't flex">
+                <img style=" width:35;" src="{% static "images/django.png" %}" alt="can't flex">
             </a>
         </div>
         <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-            <a class="thumbnail" href="#">
-                <img  src="{% static "images/postgres.jpg" %}" alt="can't flex">
+            <a id="elephant" class="thumbnail" href="#">
+                <img style=" width:35%;" src="{% static "images/postgres.jpg" %}" alt="can't flex">
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 thumb">
+            <a id="elephant" class="thumbnail" href="#">
+                <img style=" width:20%;" src="{% static "images/jquery.png" %}" alt="can't flex">
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 thumb">
+            <a id="elephant" class="thumbnail" href="#">
+                <img style=" width:20%;" src="{% static "images/js.jpeg" %}" alt="can't flex">
             </a>
         </div>
       </div>
   </div>
 
   <br>
+  <h1 class="fancy text-center"><a href="{% url "resume" %}">View Resume</a></h1>
+
   <br>
-  <h4 class="fancy text-center">PostrgreSQL Query</h4>
 
-  <table class = "table table-dark">
-    <thead class="text-center">
-      <tr>
-        <th>Name</th>
-        <th>Profecieny</th>
-      </tr>
-    </thead>
-    <tbody class="text-center">
-      {% for tech in tech_stack %}
-        <tr>
-          <td>{{tech.name}}</td>
-          <td> {{tech.profecieny}}/10 </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <div class="jumbotron" style="background-color:#53B1E1; padding-bottom: 2px;">
 
-  <iframe class="text-center" src="{% static "images/NewResumeTemplate.pdf" %}" width="100%" height="800px">
+<h1 class="fancy display-4 text-center">
+  PostrgreSQL Query
+
+</h1>
+  <p class="lead text-center"> Tech Stack (Updated W/ postgreSQL) </p>
+
+</div>
+
+      <table class = "table">
+        <thead class="text-center table-dark">
+          <tr>
+            <th>Technology Name</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          {% for tech in tech_stack %}
+            <tr>
+              <td>{{tech.name}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    </div>
+  <script>
+
+
+    $( document ).ready(function() {
+      $("#about_me_down").click(function(){
+        if($("#about_me_txt").is(":visible")){
+              $("#about_me_txt").hide(1000)
+
+          } else{
+              $("#about_me_txt").fadeIn(500);
+          }
+
+    });
+  });
+
+  </script>
+
   </body>
+
 
 
 </html>
