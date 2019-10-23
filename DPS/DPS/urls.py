@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from DPS.views import home, resume
+from DPS.views import home, resume, spaceX
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('resume/', resume, name="resume"),
+    path('spacex/', spaceX, name="spaceX"),
     # path('', include('api.urls')),
     path('', home),
 

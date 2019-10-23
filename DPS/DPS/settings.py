@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+REACT_DIR = os.path.join(BASE_DIR, 'gui')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'DPS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR, REACT_DIR], #add the root folder of the frontend
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +70,17 @@ TEMPLATES = [
         },
     },
 ]
+
+# TEMPLATES = [ { 'BACKEND': 'django.template.backends.django.DjangoTemplates',
+# 'DIRS': [os.path.join(BASE_DIR, 'book-frontend')] #Look, we have added the root folder of frontend here ,
+# 'APP_DIRS': True,
+# 'OPTIONS': {
+# 'context_processors': [
+# 'django.template.context_processors.debug',
+# 'django.template.context_processors.request', '
+# django.contrib.auth.context_processors.auth', '
+# django.contrib.messages.context_processors.messages', ], }, }, ]
+# # STATIC_URL = '/static/' STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'book-frontend', "build", "static"), # update the STATICFILES_DIRS )
 
 WSGI_APPLICATION = 'DPS.wsgi.application'
 
@@ -127,9 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'gui', "build", "static"),) # update the STATICFILES_DIRS )
+
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
